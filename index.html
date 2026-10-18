@@ -1,0 +1,838 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Babar & Alishba | Mehendi Invitation</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --green: #123d2b;
+  --green2: #1d583b;
+  --green3: #2e7049;
+  --gold: #e8bd54;
+  --gold2: #fff0a8;
+  --cream: #fff9e8;
+  --text: #fff8df;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(ellipse at top, #326d45 0%, transparent 45%),
+    linear-gradient(135deg, #0b261b, #16452f 50%, #0a291d);
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .13;
+  z-index: 0;
+  background-image:
+    radial-gradient(circle at 20% 30%, #f8d978 1px, transparent 2px),
+    radial-gradient(circle at 70% 60%, #fff0b0 1px, transparent 2px);
+  background-size: 37px 43px, 53px 59px;
+}
+
+button, a { font-family: inherit; }
+
+.site-shell {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 900px);
+  margin: auto;
+  padding: 22px 16px 35px;
+}
+
+.top-label {
+  text-align: center;
+  color: var(--gold2);
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin: 7px 0 18px;
+}
+
+.page {
+  display: none;
+  position: relative;
+  min-height: 650px;
+  padding: clamp(35px, 6vw, 65px) clamp(18px, 6vw, 60px);
+  background: linear-gradient(145deg, rgba(255,255,231,.10), rgba(255,255,231,.035));
+  border: 1px solid rgba(239,204,112,.7);
+  border-radius: 8px;
+  box-shadow: 0 25px 80px rgba(0,0,0,.28), inset 0 0 35px rgba(244,210,117,.035);
+  text-align: center;
+  overflow: hidden;
+}
+
+.page.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: pageEnter .8s ease both;
+}
+
+@keyframes pageEnter {
+  from { opacity: 0; transform: translateY(18px) scale(.985); filter: blur(5px); }
+  to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+
+.page::before {
+  content: "";
+  position: absolute;
+  inset: 9px;
+  border: 1px solid rgba(255,222,132,.72);
+  pointer-events: none;
+}
+
+.page::after {
+  content: "❧  ❀  ❧";
+  position: absolute;
+  top: 9px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 14px;
+  background: #1a4b32;
+  color: var(--gold2);
+  font-size: 20px;
+  letter-spacing: 4px;
+  white-space: nowrap;
+}
+
+.corner {
+  position: absolute;
+  color: var(--gold);
+  font-size: clamp(30px, 6vw, 48px);
+  line-height: 1;
+  z-index: 2;
+  text-shadow: 0 0 15px #c79b3e55;
+}
+
+.corner.tl { top: 13px; left: 15px; }
+.corner.tr { top: 13px; right: 15px; transform: scaleX(-1); }
+.corner.bl { bottom: 13px; left: 15px; transform: scaleY(-1); }
+.corner.br { bottom: 13px; right: 15px; transform: scale(-1); }
+
+.bismillah {
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--gold2);
+  font-size: clamp(25px, 5vw, 37px);
+  margin: 15px 0 22px;
+}
+
+.eyebrow {
+  color: var(--gold2);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 10px;
+  margin-bottom: 15px;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+}
+
+.main-title {
+  color: var(--gold2);
+  font-size: clamp(35px, 8vw, 67px);
+  line-height: 1.14;
+}
+
+.script-title {
+  font-family: 'Great Vibes', cursive;
+  color: #f3d16e;
+  font-size: clamp(45px, 10vw, 78px);
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  color: #fff4d2;
+  font-size: clamp(18px, 4vw, 25px);
+  line-height: 1.65;
+  max-width: 570px;
+}
+
+.small-copy {
+  color: #e7e6ce;
+  font-size: 12px;
+  line-height: 2;
+  max-width: 520px;
+}
+
+.flower-divider {
+  color: var(--gold);
+  font-size: 24px;
+  letter-spacing: 7px;
+  margin: 15px 0;
+}
+
+.gold-line {
+  width: 100px;
+  height: 1px;
+  margin: 22px auto;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.names {
+  font-family: 'Great Vibes', cursive;
+  color: var(--gold2);
+  font-size: clamp(54px, 12vw, 92px);
+  line-height: 1.25;
+}
+
+.ampersand {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  color: var(--gold);
+  margin: 4px 0;
+}
+
+.date-box {
+  border-top: 1px solid #e8bd5477;
+  border-bottom: 1px solid #e8bd5477;
+  padding: 17px 12px;
+  margin: 22px auto;
+  width: min(100%, 430px);
+}
+
+.date-box .date {
+  color: var(--gold2);
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(20px, 5vw, 31px);
+}
+
+.date-box p {
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-top: 7px;
+}
+
+.leaf-decoration {
+  color: #b8d28b;
+  font-size: 23px;
+  letter-spacing: 7px;
+  margin: 15px 0;
+}
+
+.btn-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 25px;
+  width: 100%;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 22px;
+  min-width: 155px;
+  border: 1px solid var(--gold);
+  border-radius: 2px;
+  background: linear-gradient(135deg, #f7df91, #d9ac43);
+  color: #163a28;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform .25s, box-shadow .25s;
+  box-shadow: 0 5px 18px #0002;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px #e8bd5433;
+}
+
+.btn.secondary {
+  background: transparent;
+  color: var(--gold2);
+}
+
+.btn.secondary:hover { background: #e8bd541a; }
+
+.info-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+  margin: 22px 0 8px;
+}
+
+.info-card {
+  padding: 24px 15px;
+  border: 1px solid #e8bd5477;
+  background: rgba(8,38,25,.34);
+}
+
+.info-icon {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.info-card h3 {
+  font-size: 19px;
+  color: var(--gold2);
+  margin-bottom: 10px;
+}
+
+.info-card p {
+  font-size: 12px;
+  line-height: 2;
+  color: #f3edd4;
+  overflow-wrap: anywhere;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.photo-frame {
+  position: relative;
+  height: 260px;
+  padding: 9px;
+  border: 1px solid var(--gold);
+  background: rgba(255,255,255,.06);
+}
+
+.photo-frame::before {
+  content: "✿  ❀  ✿";
+  position: absolute;
+  z-index: 2;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--gold2);
+  background: #194b32;
+  padding: 0 8px;
+  white-space: nowrap;
+  font-size: 16px;
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  background: rgba(0,0,0,.15);
+}
+
+.photo-caption {
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--gold2);
+  font-size: 20px;
+  margin-top: 8px;
+}
+
+.venue-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(23px, 5vw, 34px);
+  color: var(--gold2);
+  line-height: 1.4;
+  margin: 8px 0;
+}
+
+.address {
+  font-size: 13px;
+  line-height: 2.1;
+  color: #f3edd4;
+}
+
+.dua {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(21px, 4vw, 28px);
+  line-height: 1.7;
+  color: var(--gold2);
+  max-width: 600px;
+}
+
+.footer-note {
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #e7d99b;
+  margin: 18px 0 0;
+}
+
+/* FIXED MUSIC BUTTON */
+.music-control {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  z-index: 80;
+  min-width: 145px;
+  border-radius: 30px;
+  box-shadow: 0 5px 25px #0006;
+}
+
+/* FLOWER TRANSITION */
+#celebration {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  overflow: hidden;
+}
+
+#celebration.show { visibility: visible; }
+
+.curtain {
+  position: absolute;
+  inset: 0;
+  background: rgba(7,32,21,.94);
+  opacity: 0;
+}
+
+#celebration.show .curtain {
+  animation: curtainFade 1.1s ease both;
+}
+
+@keyframes curtainFade {
+  0% { opacity: 0; }
+  30%, 75% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.celebration-message {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--gold2);
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(43px, 10vw, 76px);
+  opacity: 0;
+  transform: scale(.5);
+  text-shadow: 0 0 30px #e8bd5477;
+}
+
+#celebration.show .celebration-message {
+  animation: messagePop 1.3s .12s ease both;
+}
+
+@keyframes messagePop {
+  0% { opacity: 0; transform: scale(.5) rotate(-7deg); }
+  35% { opacity: 1; transform: scale(1.1) rotate(2deg); }
+  65% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.2) translateY(-25px); }
+}
+
+.flying-flower {
+  position: absolute;
+  top: -50px;
+  color: var(--gold2);
+  font-size: 24px;
+  animation: flowerFall 2s ease-in forwards;
+  filter: drop-shadow(0 0 8px #e8bd5477);
+}
+
+@keyframes flowerFall {
+  0% { transform: translateY(-10vh) rotate(0deg) scale(.6); opacity: 0; }
+  12% { opacity: 1; }
+  100% { transform: translateY(115vh) rotate(650deg) scale(1.3); opacity: 0; }
+}
+
+.dhol-pop {
+  position: absolute;
+  bottom: 15%;
+  font-size: clamp(45px, 10vw, 72px);
+  opacity: 0;
+}
+
+#celebration.show .dhol-pop {
+  animation: dholDance 1.1s .15s ease both;
+}
+
+@keyframes dholDance {
+  0% { opacity: 0; transform: scale(.3) rotate(-25deg); }
+  25% { opacity: 1; transform: scale(1.2) rotate(12deg); }
+  45% { opacity: 1; transform: scale(.95) rotate(-10deg); }
+  65% { opacity: 1; transform: scale(1.1) rotate(8deg); }
+  100% { opacity: 0; transform: scale(.6) translateY(30px); }
+}
+
+.page-indicator {
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+  margin: 17px auto 0;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  background: transparent;
+  transition: all .3s;
+}
+
+.dot.active {
+  width: 24px;
+  border-radius: 10px;
+  background: var(--gold);
+}
+
+@media (max-width: 600px) {
+  .site-shell { padding: 12px 9px 80px; }
+  .top-label { letter-spacing: 2px; font-size: 9px; }
+  .page { min-height: 610px; padding: 43px 22px; }
+  .info-grid { grid-template-columns: 1fr; gap: 11px; }
+  .info-card { padding: 18px 12px; }
+  .photo-grid { grid-template-columns: 1fr; max-width: 340px; }
+  .photo-frame { height: 280px; }
+  .btn-row { gap: 9px; }
+  .btn { width: 100%; max-width: 290px; padding: 13px 14px; }
+  .date-box { padding: 15px 10px; }
+  .page::after { font-size: 15px; letter-spacing: 2px; }
+  .music-control { right: 10px; bottom: 10px; min-width: auto; padding: 12px 15px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="site-shell">
+  <div class="top-label">A celebration of love • A family invitation</div>
+
+  <!-- PAGE 1: COVER -->
+  <section class="page active" id="page1">
+    <span class="corner tl">❀</span><span class="corner tr">❀</span>
+    <span class="corner bl">❀</span><span class="corner br">❀</span>
+
+    <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+    <div class="flower-divider">✿ ❋ ✿</div>
+    <p class="eyebrow">With love and blessings from our family</p>
+    <h1 class="main-title">You're Invited</h1>
+    <p class="subtitle" style="margin-top:16px">
+      To a beautiful evening filled with<br>
+      colours, laughter, flowers &amp; love
+    </p>
+    <div class="gold-line"></div>
+    <p class="script-title">Mehendi Night</p>
+    <div class="leaf-decoration">❧ 🌼 ❧</div>
+    <p class="small-copy">Please join us as we celebrate the joyful beginning of a beautiful new journey.</p>
+
+    <div class="btn-row">
+      <button class="btn" onclick="goToPage(2)">Open Invitation ✿</button>
+    </div>
+    <div class="footer-note">WITH LOVE • FROM OUR FAMILY</div>
+  </section>
+
+  <!-- PAGE 2: NAMES -->
+  <section class="page" id="page2">
+    <span class="corner tl">❀</span><span class="corner tr">❀</span>
+    <span class="corner bl">❀</span><span class="corner br">❀</span>
+
+    <p class="eyebrow">Together with their families</p>
+    <p class="subtitle">Request the pleasure of your company at the Mehendi celebration of</p>
+    <div class="flower-divider">❧ ✿ ❧</div>
+
+    <div class="names">Babar</div>
+    <span class="ampersand">&amp;</span>
+    <div class="names">Alishba</div>
+
+    <div class="gold-line"></div>
+    <p class="subtitle">Two hearts, one beautiful celebration</p>
+
+    <div class="date-box">
+      <div class="date">Sunday, 15 November 2026</div>
+      <p>AT 9:00 PM</p>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn secondary" onclick="goToPage(1)">← Previous</button>
+      <button class="btn" onclick="goToPage(3)">Event Details →</button>
+    </div>
+  </section>
+
+  <!-- PAGE 3: EVENT DETAILS -->
+  <section class="page" id="page3">
+    <span class="corner tl">❀</span><span class="corner tr">❀</span>
+    <span class="corner bl">❀</span><span class="corner br">❀</span>
+
+    <p class="eyebrow">Save the date</p>
+    <h2 class="main-title" style="font-size:clamp(33px,7vw,52px)">The Celebration</h2>
+    <div class="flower-divider">✿ ❋ ✿</div>
+    <p class="subtitle">An evening of traditions, happiness and cherished memories.</p>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-icon">🌼</div>
+        <h3>Date &amp; Time</h3>
+        <p>Sunday<br>15 November 2026<br>9:00 PM</p>
+      </div>
+
+      <div class="info-card">
+        <div class="info-icon">📍</div>
+        <h3>Venue</h3>
+        <p>Blooming Garden<br>C-14, Block 2<br>Gulshan-e-Iqbal<br>Karachi, Pakistan</p>
+      </div>
+    </div>
+
+    <p class="small-copy">Your presence will make our celebration even more special.</p>
+
+    <div class="btn-row">
+      <button class="btn secondary" onclick="goToPage(2)">← Previous</button>
+      <button class="btn" onclick="goToPage(4)">Our Memories →</button>
+      <a class="btn secondary" target="_blank" rel="noopener"
+         href="https://www.google.com/maps/search/?api=1&amp;query=Blooming+Garden+C-14+Block+2+Gulshan-e-Iqbal+Karachi">Open Map ↗</a>
+    </div>
+  </section>
+
+  <!-- PAGE 4: PHOTOS -->
+  <section class="page" id="page4">
+    <span class="corner tl">❀</span><span class="corner tr">❀</span>
+    <span class="corner bl">❀</span><span class="corner br">❀</span>
+
+    <p class="eyebrow">A glimpse of our happiness</p>
+    <h2 class="script-title">Memories &amp; Moments</h2>
+    <p class="small-copy">"And he made us in pairs".</p>
+
+    <div class="photo-grid">
+      <div>
+        <div class="photo-frame">
+          <!-- PHOTO 1: Put photo1.jpg in the SAME folder as index.html -->
+          <img src="WhatsApp Image 2026-10-16 at 3.37.23 PM (1).jpeg" alt="Babar and Alishba photo one">
+        </div>
+        <div class="photo-caption">Babar</div>
+      </div>
+
+      <div>
+        <div class="photo-frame">
+          <!-- PHOTO 2: Put photo2.jpg in the SAME folder as index.html -->
+          <img src="WhatsApp Image 2026-10-16 at 3.37.23 PM.jpeg" alt="Babar and Alishba photo two">
+        </div>
+        <div class="photo-caption">Alishba</div>
+      </div>
+    </div>
+
+    <p class="small-copy">Keep the memories close and let the celebrations begin!</p>
+
+    <div class="btn-row">
+      <button class="btn secondary" onclick="goToPage(3)">← Previous</button>
+      <button class="btn" onclick="goToPage(5)">A Special Dua →</button>
+    </div>
+  </section>
+
+  <!-- PAGE 5: DUA AND VENUE -->
+  <section class="page" id="page5">
+    <span class="corner tl">❀</span><span class="corner tr">❀</span>
+    <span class="corner bl">❀</span><span class="corner br">❀</span>
+
+    <p class="eyebrow">The big day awaits</p>
+    <h2 class="script-title">Join Our Happiness</h2>
+    <div class="flower-divider">🌼 ❧ 🌼</div>
+
+    <p class="subtitle">We would be honoured to celebrate this special occasion with you.</p>
+
+    <div class="date-box">
+      <p class="eyebrow">Our venue</p>
+      <div class="venue-name">Blooming Garden</div>
+      <p class="address">
+        C-14, Block 2,<br>
+        Gulshan-e-Iqbal,<br>
+        Karachi, Pakistan
+      </p>
+      <p style="margin-top:12px;color:#ffedb0">Sunday, 15 November 2026 • 9:00 PM</p>
+    </div>
+
+    <div class="gold-line"></div>
+    <p class="dua">May Allah bless Babar &amp; Alishba with endless love, happiness, barakah and a beautiful life together. Ameen.</p>
+
+    <div class="flower-divider">❀ ✿ ❀</div>
+    <p class="small-copy">With warm wishes and heartfelt prayers,<br>
+      <strong style="color:var(--gold2)">From our family to yours</strong>
+    </p>
+
+    <div class="btn-row">
+      <button class="btn secondary" onclick="goToPage(4)">← Previous</button>
+      <button class="btn" onclick="goToPage(1)">Back to Beginning ✿</button>
+      <button class="btn secondary" onclick="celebrateAgain()">Celebrate Again 🌼</button>
+    </div>
+  </section>
+
+  <div class="page-indicator">
+    <span class="dot active" id="dot1"></span>
+    <span class="dot" id="dot2"></span>
+    <span class="dot" id="dot3"></span>
+    <span class="dot" id="dot4"></span>
+    <span class="dot" id="dot5"></span>
+  </div>
+
+  <p class="footer-note">MADE WITH LOVE &amp; DUAS • BABAR &amp; ALISHBA</p>
+</div>
+
+<!-- ==========================================
+     MUSIC FILE LOCATION:
+     Put music.mp3 in the SAME folder as index.html.
+     Upload music.mp3 to GitHub along with index.html.
+     ========================================== -->
+
+<audio id="weddingMusic" loop preload="auto">
+  <source src="CHOGADA -  _ Loveyatri _ Aayush Sharma _ Warina Hussain _Darshan Raval, Lijo-DJ Chetas ( Lyrics ).mp3" type="audio/mpeg">
+  Your browser does not support audio.
+</audio>
+
+<button id="musicButton" class="btn music-control" onclick="toggleMusic()">
+  ♫ Play Music
+</button>
+
+<!-- FLOWER / DHOL TRANSITION -->
+<div id="celebration" aria-hidden="true">
+  <div class="curtain"></div>
+  <div class="celebration-message" id="celebrationText">Phoolon Bhari Mehendi! 🌼</div>
+  <div class="dhol-pop">🥁</div>
+</div>
+
+<script>
+let currentPage = 1;
+let isTransitioning = false;
+
+const weddingMusic = document.getElementById("weddingMusic");
+const musicButton = document.getElementById("musicButton");
+
+async function toggleMusic() {
+  if (weddingMusic.paused) {
+    try {
+      await weddingMusic.play();
+      musicButton.textContent = "♫ Pause Music";
+    } catch (error) {
+      musicButton.textContent = "♫ Tap to Play";
+      alert("Music play nahi hui. Check karo ke music.mp3 file index.html ke same folder mein hai aur filename bilkul sahi hai.");
+    }
+  } else {
+    weddingMusic.pause();
+    musicButton.textContent = "♫ Play Music";
+  }
+}
+
+weddingMusic.addEventListener("error", () => {
+  musicButton.title = "Check that music.mp3 is uploaded beside index.html";
+});
+
+const celebrationMessages = [
+  "Phoolon Bhari Mehendi! 🌼",
+  "Dhol Bajay, Khushiyan Aayen! 🥁",
+  "Babar & Alishba 💚",
+  "Love, Laughter & Duas ✨",
+  "Mehendi Mubarak! 🌿"
+];
+
+function makeFlowers(count = 35) {
+  const overlay = document.getElementById("celebration");
+  const flowers = ["✿", "❀", "❁", "✾", "🌼", "🌿", "✨"];
+
+  for (let i = 0; i < count; i++) {
+    const flower = document.createElement("span");
+    flower.className = "flying-flower";
+    flower.textContent = flowers[Math.floor(Math.random() * flowers.length)];
+    flower.style.left = Math.random() * 100 + "%";
+    flower.style.animationDelay = Math.random() * 0.6 + "s";
+    flower.style.animationDuration = (1.5 + Math.random() * 1.5) + "s";
+    flower.style.fontSize = (16 + Math.random() * 20) + "px";
+    overlay.appendChild(flower);
+
+    setTimeout(() => flower.remove(), 4000);
+  }
+}
+
+function goToPage(pageNumber) {
+  if (isTransitioning || pageNumber === currentPage) return;
+  if (pageNumber < 1 || pageNumber > 5) return;
+
+  isTransitioning = true;
+
+  const overlay = document.getElementById("celebration");
+  const text = document.getElementById("celebrationText");
+
+  text.textContent = celebrationMessages[
+    Math.floor(Math.random() * celebrationMessages.length)
+  ];
+
+  overlay.classList.add("show");
+  makeFlowers(35);
+
+  setTimeout(() => {
+    document.getElementById("page" + currentPage).classList.remove("active");
+    document.getElementById("page" + pageNumber).classList.add("active");
+
+    for (let i = 1; i <= 5; i++) {
+      document.getElementById("dot" + i).classList.toggle("active", i === pageNumber);
+    }
+
+    currentPage = pageNumber;
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, 550);
+
+  setTimeout(() => {
+    overlay.classList.remove("show");
+    overlay.querySelectorAll(".flying-flower").forEach(flower => flower.remove());
+    isTransitioning = false;
+  }, 1900);
+}
+
+function celebrateAgain() {
+  if (isTransitioning) return;
+
+  const overlay = document.getElementById("celebration");
+  const text = document.getElementById("celebrationText");
+
+  text.textContent = "Mehendi Mubarak! 🌼";
+  overlay.classList.add("show");
+  makeFlowers(55);
+
+  setTimeout(() => {
+    overlay.classList.remove("show");
+    overlay.querySelectorAll(".flying-flower").forEach(flower => flower.remove());
+  }, 1900);
+}
+</script>
+
+</body>
+</html>
